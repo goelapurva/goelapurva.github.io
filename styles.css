@@ -1,0 +1,463 @@
+/* Custom properties/variables  */
+:root {
+    --main-white: #f0f0f0;
+    --main-red: rgb(0, 89, 255);
+    --main-blue: #45567d;
+    --main-gray: #fff;
+  }
+  
+  /* Base reset */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* box-sizing and font sizing */
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  html {
+    box-sizing: border-box;
+  
+    /* Set font size for easy rem calculations
+     * default document font size = 16px, 1rem = 16px, 100% = 16px
+     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+    */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+  
+  /* A few media query to set some font sizes at different screen sizes.
+   * This helps automate a bit of responsiveness.
+   * The trick is to use the rem unit for size values, margin and padding.
+   * Because rem is relative to the document font size
+   * when we scale up or down the font size on the document
+   * it will affect all properties using rem units for the values.
+  */
+  
+  /* I am using the em unit for breakpoints
+   * The calculation is the following
+   * screen size divided by browser base font size
+   * As an example: a breakpoint at 980px
+   * 980px / 16px = 61.25em
+  */
+  
+  /* 1200px / 16px = 75em */
+  @media (max-width: 75em) {
+    html {
+      font-size: 60%;
+    }
+  }
+  
+  /* 980px / 16px = 61.25em */
+  @media (max-width: 61.25em) {
+    html {
+      font-size: 58%;
+    }
+  }
+  
+  /* 460px / 16px = 28.75em */
+  @media (max-width: 28.75em) {
+    html {
+      font-size: 55%;
+    }
+  }
+  
+  /* Base styles */
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem; /* 18px */
+    font-weight: 300;
+    line-height: 1.4;
+  /* //  color: var(--main-white); */
+  color: #f0f0f0;
+  }
+  
+  h1,
+  h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-align: start;
+  }
+
+  .nameWrap{
+    color:#334155;
+    font-size: 4rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+    color: white;
+  
+  }
+  .webPageWrapper{
+    font-size: 4.2rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-align: center;
+  }
+ 
+  h2 {
+    font-size: 4.2rem;
+  }
+  
+  ul {
+    list-style: none;  
+  }
+  .journey{
+    border-top: 1px dashed red;
+  }
+
+  .card{
+    width:75%;
+    height: 50%;
+  }
+
+  #hello{
+    list-style-position: inside;
+    max-width:100%;
+    font-size:17px;
+    text-align: justify;
+    padding-top: 30px;
+  }
+  #cardWrap{
+    padding-top:5px;
+    font-size:17px;
+    text-align: justify;
+  }
+
+  .stepCount{
+    border: 1px dashed #dc6803;
+    font-weight: bold; font-size: 10px; line-height: 10px; 
+    display: flex; align-items: center; justify-content: center; 
+    text-align: center; color: #ABABAB; width: 20px; height: 20px; 
+    background: #FFFFFF; border: 1px solid #ABABAB;
+     box-sizing: border-box; border-radius: 10px; margin-top: 2px;
+     top:20px;
+  }
+  .stepLabel{ 
+    font-weight: 600; font-size: 12px;
+     line-height: 18px;
+      color: #002C64; opacity: 0.8; max-width: 85%;
+       margin-top: 8px; 
+      }
+
+  .xxxxx{
+ border-bottom:1px solid black;
+  }
+   a:hover{
+    cursor:pointer;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--main-white);
+   
+  }
+
+  .wrapcard{
+    color: #000;
+  }
+
+  
+  
+  img {
+    display: block;
+    width: 100%;
+  }
+   p{
+    color: black;
+   }
+   #hello-fotter{
+     color:white;
+   }
+  /* nav */
+  
+  .nav {
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #3b82f6;
+   /* // box-shadow: 0 2px 0 rgba(218, 192, 192, 0.4); */
+    z-index: 10;
+  }
+  
+  .nav-list {
+    display: flex;
+    margin-right: 2rem;
+  }
+  
+  @media (max-width: 28.75em) {
+    .nav {
+      justify-content: center;
+    }
+  
+    .nav-list {
+      margin: 0 1rem;
+    }
+  }
+  .nav-list a {
+    display: block;
+    font-size: 2.2rem;
+    padding: 2rem;
+  }
+  li{
+    color:black;
+  }
+  
+  /* Welcome section */
+  
+  .welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgb(27, 96, 224);
+    background-image: linear-gradient(62deg, #f4eae8 0%, #ad81e6 100%); */
+    background-color: #ffffff;
+    background-image: #FFF;
+  }
+  
+  .welcome-section > p {
+    font-size: 2rem;
+    font-weight: 100;
+    font-style: italic;
+   color:black;
+  }
+  @media (max-width: 28.75em) {
+    /* #hello {
+      font-size: 2rem;
+    } */
+    .flex-child{
+      font-size: 1rem;
+      grid-template-columns: 1rem;
+    }
+    /* .projects-grid {
+      grid-template-columns: 1fr;
+    } */
+  }
+  
+  /* Projects section */
+  
+  .projects-section {
+    text-align: center;
+    padding: 10rem 2rem;
+    background: var(--main-blue);
+  }
+  
+  .projects-section-header {
+    max-width: 640px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.2rem solid var(--main-white);
+  }
+  
+  @media (max-width: 28.75em) {
+    .projects-section-header {
+      font-size: 4rem;
+    }
+  }
+  
+  /* "Automagic" image grid using no media queries */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+  }
+  
+  @media (max-width: 30.625em) {
+    .projects-section {
+      padding: 6rem 1rem;
+    }
+  
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .project {
+    background: rgb(255, 255, 255);
+    box-shadow: 1px 1px 2px rgba(222, 192, 192, 0.5);
+    border-radius: 2px;
+  }
+  
+  .code {
+    color: var(--main-gray);
+    transition: color 0.3s ease-out;
+  }
+  
+  .project:hover .code {
+    color: #ff7f50;
+  }
+  
+  .project-image {
+    height: calc(100% - 6.8rem);
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .project-title {
+    font-size: 2rem;
+    padding: 2rem 0.5rem;
+    color:rgb(9, 54, 235);
+  }
+  .project-tit {
+    font-size: 2rem;
+    padding: 2rem 0.5rem;
+    color:rgb(225, 226, 231);
+    font-weight:600;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 2px;
+  }
+  
+  .btn-show-all {
+    font-size: 2rem;
+    background: var(--main-gray);
+    transition: background 0.3s ease-out;
+  }
+  
+  .btn-show-all:hover {
+    background: var(--main-red);
+  }
+  
+  .btn-show-all:hover > i {
+    transform: translateX(2px);
+  }
+  
+  .btn-show-all > i {
+    margin-left: 10px;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+  }
+  
+  /* Contact section */
+  
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    padding: 0 2rem;
+    background: var(--main-blue);
+  }
+  
+  .contact-section-header > h2 {
+    font-size: 6rem;
+  }
+  
+  @media (max-width: 28.75em) {
+    .contact-section-header > h2 {
+      font-size: 4rem;
+    }
+  }
+  
+  .contact-section-header > p {
+    font-style: italic;
+  }
+  
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 980px;
+    flex-wrap: wrap;
+  }
+  
+  .contact-details {
+    font-size: 2.4rem;
+    text-shadow: 2px 2px 1px #1f1f1f;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .contact-details:hover {
+    transform: translateY(8px);
+  }
+  
+  /* Footer */
+  
+  footer {
+    font-weight: 300;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+    background: #3b82f6;
+    border-top: 4px solid var(--main-red);
+  }
+  
+  footer > p {
+    margin: 2rem;
+  }
+  
+  footer i {
+    vertical-align: middle;
+  }
+  
+  @media (max-width: 28.75em) {
+    footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  #skill-id {
+      box-sizing: border-box;
+       color:#334155;
+    font-size: 4rem;
+            }
+
+.container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color:black;
+}
+
+.html {width: 90%; background-color: #00b256;}
+.css {width: 80%; background-color: #dc6803;}
+.js {width: 85%; background-color: #fef367;}
+.react {width: 75%; background-color: #f43f5e;}
+.redux {width: 70%; background-color: #00afcd;}
+.JSON {width: 70%; background-color: #ffe4e6;}
+.git {width: 80%; background-color: #93c5fd;}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.flex-child {
+  flex: 5;
+  border: none solid rgb(236, 243, 244);
+}  
+
+.flex-child:first-child {
+  margin-right: 150px;
+
+} 
+  
+  
